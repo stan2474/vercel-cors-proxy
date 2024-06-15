@@ -2,7 +2,7 @@ const axios = require("axios");
 const micro = require("micro");
 const microCors = require("micro-cors");
 const { parse } = require("url");
-const cors = microCors();
+const cors = microCors({allowHeaders: ['X-Requested-With','Access-Control-Allow-Origin','X-HTTP-Method-Override','Content-Type','Authorization','Accept', 'Pragma', 'Expires']});
 
 const handler = async (req, res) => {
   const { query } = parse(req.url, true);
