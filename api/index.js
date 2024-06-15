@@ -18,7 +18,7 @@ const handler = async (req, res) => {
     return micro.send(res, 400, { error: "Missing URL parameter" });
   }
   if (!url.startsWith("https://cc.bingj.com/") || !url.startsWith("https://bing.com/")) {
-    return micro.send(res, 400, { error: "No" });
+    return micro.send(res, 400, { error: url });
 }
 
   try {
